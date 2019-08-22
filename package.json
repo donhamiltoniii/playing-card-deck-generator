@@ -1,0 +1,47 @@
+{
+  "name": "playing-card-deck-generator",
+  "version": "1.0.0",
+  "description": "A simple library for generating playing card decks",
+  "main": "index.js",
+  "scripts": {
+    "lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}'",
+    "pretest": "npm run lint",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/donhamiltoniii/playing-card-deck-generator.git"
+  },
+  "keywords": [
+    "playing",
+    "cards",
+    "generator"
+  ],
+  "author": "Don Hamilton III <donhamiltoniii@gmail.com> (https://donhamiltoniii.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/donhamiltoniii/playing-card-deck-generator/issues"
+  },
+  "homepage": "https://github.com/donhamiltoniii/playing-card-deck-generator#readme",
+  "dependencies": {
+    "@types/jest": "^24.0.18",
+    "@types/node": "^12.7.2",
+    "jest": "^24.9.0",
+    "ts-jest": "^24.0.2"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "transform": {
+      "\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "/*.test.(ts|tsx|js)$"
+  },
+  "devDependencies": {
+    "typescript": "^3.5.3"
+  }
+}
