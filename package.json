@@ -4,6 +4,7 @@
   "description": "A simple library for generating playing card decks",
   "main": "index.js",
   "scripts": {
+    "build": "tsc",
     "lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}'",
     "pretest": "npm run lint",
     "test": "jest",
@@ -39,7 +40,7 @@
     "transform": {
       "\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
-    "testRegex": "/*.test.(ts|tsx|js)$"
+    "testRegex": "/**/*.test.(ts|tsx|js)$"
   },
   "devDependencies": {
     "typescript": "^3.5.3"

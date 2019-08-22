@@ -1,4 +1,4 @@
-module.exports = class DeckGenerator {
+export default class DeckGenerator {
   generate(suits: String[], values: String[]): String[] {
     let deck: String[] = []
 

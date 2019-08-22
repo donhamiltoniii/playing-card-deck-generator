@@ -1,4 +1,4 @@
-const DeckGenerator = require('./DeckGenerator')
+import DeckGenerator from './DeckGenerator'
 
 describe('DeckGenerator', () => {
 
