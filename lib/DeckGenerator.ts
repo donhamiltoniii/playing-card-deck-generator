@@ -1,13 +1,13 @@
 export default class DeckGenerator {
-  generate(suits: String[], values: String[]): String[] {
-    let deck: String[] = []
+  public generate(suits: string[], values: string[]): string[] {
+    const deck: string[] = [];
 
-    suits.forEach(suit => {
-      values.forEach(value => {
-        deck.push(`${value}${suit}`)
-      })
-    })
+    suits.forEach((suit) => {
+      values.forEach((value) => {
+        deck.push(`${value}${suit}`);
+      });
+    });
 
-    return deck
+    return deck;
   }
 }

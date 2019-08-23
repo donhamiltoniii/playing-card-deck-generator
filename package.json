@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}'",
-    "pretest": "npm run lint",
+    "lint": "tslint -c tslint.json 'lib/**/*.{ts,tsx}'",
+    "pretest": "yarn run lint --fix",
     "test": "jest",
     "test:watch": "jest --watch"
   },
@@ -38,9 +38,8 @@
       "js"
     ],
     "transform": {
-      "\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
-    },
-    "testRegex": "/**/*.test.(ts|tsx|js)$"
+      "\\.(ts|tsx)$": "ts-jest"
+    }
   },
   "devDependencies": {
     "typescript": "^3.5.3"
