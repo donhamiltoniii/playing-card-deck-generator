@@ -1,13 +1,13 @@
+import Deck from './Deck'
+
 export default class DeckGenerator {
-  public generate(suits: string[], values: string[]): string[] {
-    const deck: string[] = [];
+  private deck: Deck
 
-    suits.forEach((suit) => {
-      values.forEach((value) => {
-        deck.push(`${value}${suit}`);
-      });
-    });
+  public getDeck(): string[] {
+    return this.deck.getCardValues()
+  }
 
-    return deck;
+  constructor(suits: string[], values: string[]) {
+    this.deck = new Deck(suits, values)
   }
 }
