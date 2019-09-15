@@ -8,7 +8,7 @@ describe('DeckGenerator', () => {
 
       const deck = undertest.getDeck()
 
-      expect(deck instanceof Deck).toBeTruthy()
+      expect(deck instanceof Array).toBeTruthy()
     })
 
     test('given spades as a suit and 2 and 3 as values, should generate a `Deck` with 2 `Card`s', () => {

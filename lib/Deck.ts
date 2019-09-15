@@ -9,13 +9,13 @@ class Deck {
     return this.cards
   }
 
-  constructor(suits: string[], values: string[]) {
+  constructor(suits: string[] = [], values: string[] = []) {
     this.cards = []
     this.suits = suits
     this.values = values
     this.suits.forEach(suit => {
       this.values.forEach(value => {
-        this.addCard(new Card(suit, value))
+        this.addCard(new Card(value, suit))
       })
     })
   }

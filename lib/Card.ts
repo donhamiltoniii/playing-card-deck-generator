@@ -1,9 +1,15 @@
 class Card {
+  private suit: string
+  private value: string
+
   public getValue(): string {
-    return `${this.suit}${this.value}`
+    return `${this.value}${this.suit}`
   }
 
-  constructor(private suit: string, private value: string) {}
+  constructor(value: string, suit: string) {
+    this.suit = suit
+    this.value = value
+  }
 }
 
 export default Card
