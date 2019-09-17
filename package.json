@@ -4,6 +4,7 @@
   "description": "A simple library for generating playing card decks",
   "main": "index.js",
   "scripts": {
+    "prepublish": "tsc",
     "test": "jest",
     "test:watch": "jest --watchAll"
   },
