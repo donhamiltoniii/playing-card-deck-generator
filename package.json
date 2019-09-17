@@ -1,6 +1,6 @@
 {
   "name": "playing-card-deck-generator",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A simple library for generating playing card decks",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
