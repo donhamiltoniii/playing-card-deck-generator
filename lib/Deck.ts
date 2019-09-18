@@ -20,8 +20,14 @@ class Deck {
     })
   }
 
-  public addCard(card: Card) {
+  private addCard(card: Card) {
     this.cards.push(card)
+  }
+
+  public dealTopCard(): Card {
+    const topCard: Card | undefined = this.cards.shift()
+    if (topCard === undefined) throw new Error('No cards left in the Deck')
+    return topCard
   }
 
   public getCardValues(): string[] {
@@ -30,6 +36,17 @@ class Deck {
       cardValues.push(card.getValue())
     })
     return cardValues
+  }
+
+  public shuffle(): void {
+    const shuffledDeck: Card[] = []
+
+    for (let i = this.cards.length - 1; i >= 0; i--) {
+      const randomCard: Card = this.cards[Math.floor(Math.random() * i)]
+      shuffledDeck.push(randomCard)
+    }
+
+    this.cards = shuffledDeck
   }
 }
 
