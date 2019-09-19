@@ -5,7 +5,9 @@ declare class Deck {
     private values;
     getCards(): Card[];
     constructor(suits?: string[], values?: string[]);
-    addCard(card: Card): void;
+    private addCard;
+    dealTopCard(): Card;
     getCardValues(): string[];
+    shuffle(): void;
 }
 export default Deck;

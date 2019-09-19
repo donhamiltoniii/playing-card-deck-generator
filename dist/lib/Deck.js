@@ -24,12 +24,26 @@ var Deck = /** @class */ (function () {
     Deck.prototype.addCard = function (card) {
         this.cards.push(card);
     };
+    Deck.prototype.dealTopCard = function () {
+        var topCard = this.cards.shift();
+        if (topCard === undefined)
+            throw new Error('No cards left in the Deck');
+        return topCard;
+    };
     Deck.prototype.getCardValues = function () {
         var cardValues = [];
         this.getCards().forEach(function (card) {
             cardValues.push(card.getValue());
         });
         return cardValues;
+    };
+    Deck.prototype.shuffle = function () {
+        var shuffledDeck = [];
+        for (var i = this.cards.length - 1; i >= 0; i--) {
+            var randomCard = this.cards[Math.floor(Math.random() * i)];
+            shuffledDeck.push(randomCard);
+        }
+        this.cards = shuffledDeck;
     };
     return Deck;
 }());
