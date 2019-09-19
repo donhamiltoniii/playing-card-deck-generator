@@ -1,7 +1,3 @@
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
 var Card = /** @class */ (function () {
     function Card(value, suit) {
         this.suit = suit;
@@ -68,7 +64,4 @@ var DeckGenerator = /** @class */ (function () {
 
 var standardDeck = DeckGenerator.generateDeck(['♤', '♡', '♧', '♢'], ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']);
 
-exports.Card = Card;
-exports.Deck = Deck;
-exports.DeckGenerator = DeckGenerator;
-exports.standardDeck = standardDeck;
+export { Card, Deck, DeckGenerator, standardDeck };
