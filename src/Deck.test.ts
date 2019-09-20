@@ -48,11 +48,11 @@ describe('Deck', () => {
         ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
       )
 
-      const originalCards: Card[] = underTest.getCards()
+      const originalCards: string[] = underTest.getCardValues()
       underTest.shuffle()
-      const shuffledCards: Card[] = underTest.getCards()
+      const shuffledCards: string[] = underTest.getCardValues()
 
-      expect(shuffledCards).not.toEqual(originalCards)
+      expect(shuffledCards).not.toStrictEqual(originalCards)
     })
 
     test('should not contain duplicates', () => {
