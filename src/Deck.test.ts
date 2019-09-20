@@ -42,14 +42,30 @@ describe('Deck', () => {
   })
 
   describe('shuffle', () => {
-    describe('should not be the same as initial collection', () => {
-      const underTest: Deck = new Deck(['♤', '♢'], ['2', '3', '4'])
+    test('should not be the same as initial collection', () => {
+      const underTest: Deck = new Deck(
+        ['♤', '♢', '♧', '♡'],
+        ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
+      )
 
       const originalCards: Card[] = underTest.getCards()
       underTest.shuffle()
       const shuffledCards: Card[] = underTest.getCards()
 
       expect(shuffledCards).not.toEqual(originalCards)
+    })
+
+    test('should not contain duplicates', () => {
+      const underTest: Deck = new Deck(
+        ['♤', '♢', '♧', '♡'],
+        ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
+      )
+
+      const originalCardsLength: number = underTest.getCards().length
+      underTest.shuffle()
+      const shuffledCardsLength: number = new Set(underTest.getCards()).size
+
+      expect(originalCardsLength).toEqual(shuffledCardsLength)
     })
   })
 })

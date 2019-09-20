@@ -39,10 +39,12 @@ class Deck {
   }
 
   public shuffle(): void {
+    const currentDeck: Card[] = this.cards
     const shuffledDeck: Card[] = []
 
-    for (let i = this.cards.length - 1; i >= 0; i--) {
-      const randomCard: Card = this.cards.slice(Math.floor(Math.random() * this.cards.length))[0]
+    for (let i = this.cards.length; i > 0; i--) {
+      const randomNumber = Math.floor(Math.random() * i)
+      const randomCard: Card = currentDeck.splice(randomNumber, 1)[0]
       shuffledDeck.push(randomCard)
     }
 
