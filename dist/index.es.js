@@ -43,12 +43,13 @@ var Deck = /** @class */ (function () {
         return cardValues;
     };
     Deck.prototype.shuffle = function () {
-        var shuffledDeck = [];
-        for (var i = this.cards.length - 1; i >= 0; i--) {
-            var randomCard = this.cards[Math.floor(Math.random() * i)];
-            shuffledDeck.push(randomCard);
+        var newDeck = [];
+        for (var i = 0; i < this.cards.length; i++) {
+            var rand = Math.floor(Math.random() * (i + 1));
+            newDeck[i] = newDeck[rand];
+            newDeck[rand] = this.cards[i];
         }
-        this.cards = shuffledDeck;
+        this.cards = newDeck;
     };
     return Deck;
 }());

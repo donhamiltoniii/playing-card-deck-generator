@@ -10,6 +10,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "rollup -c",
+    "prepublish": "yarn build",
     "test": "jest",
     "test:watch": "jest --watchAll",
     "watch": "rollup -cw"
