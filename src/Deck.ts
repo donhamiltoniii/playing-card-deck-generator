@@ -42,7 +42,7 @@ class Deck {
     const shuffledDeck: Card[] = []
 
     for (let i = this.cards.length - 1; i >= 0; i--) {
-      const randomCard: Card = this.cards[Math.floor(Math.random() * i)]
+      const randomCard: Card = this.cards.slice(Math.floor(Math.random() * this.cards.length))[0]
       shuffledDeck.push(randomCard)
     }
 
