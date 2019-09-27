@@ -3,8 +3,14 @@ var Card = /** @class */ (function () {
         this.suit = suit;
         this.value = value;
     }
+    Card.prototype.getSuit = function () {
+        return this.suit;
+    };
     Card.prototype.getValue = function () {
-        return "" + this.value + this.suit;
+        return this.value;
+    };
+    Card.prototype.getCardValue = function () {
+        return [this.value, this.suit];
     };
     return Card;
 }());
@@ -38,7 +44,7 @@ var Deck = /** @class */ (function () {
     Deck.prototype.getCardValues = function () {
         var cardValues = [];
         this.getCards().forEach(function (card) {
-            cardValues.push(card.getValue());
+            cardValues.push(card.getCardValue());
         });
         return cardValues;
     };
@@ -57,12 +63,12 @@ var Deck = /** @class */ (function () {
 var DeckGenerator = /** @class */ (function () {
     function DeckGenerator() {
     }
-    DeckGenerator.generateDeck = function (suits, values) {
+    DeckGenerator.build = function (suits, values) {
         return new Deck(suits, values);
     };
     return DeckGenerator;
 }());
 
-var standardDeck = DeckGenerator.generateDeck(['♤', '♡', '♧', '♢'], ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']);
+var standardDeck = DeckGenerator.build(['♤', '♡', '♧', '♢'], ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']);
 
-export { Card, Deck, DeckGenerator, standardDeck };
+export { Card, Deck, DeckGenerator as DeckFactory, standardDeck };

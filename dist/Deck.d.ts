@@ -7,7 +7,7 @@ declare class Deck {
     constructor(suits?: string[], values?: string[]);
     private addCard;
     dealTopCard(): Card;
-    getCardValues(): string[];
+    getCardValues(): string[][];
     shuffle(): void;
 }
 export default Deck;
