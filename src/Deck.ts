@@ -30,20 +30,20 @@ class Deck {
     return topCard
   }
 
-  public getCardValues(): string[] {
-    let cardValues: string[] = []
+  public getCardValues(): string[][] {
+    let cardValues: string[][] = []
     this.getCards().forEach(card => {
-      cardValues.push(card.getValue())
+      cardValues.push(card.getCardValue())
     })
     return cardValues
   }
 
   public shuffle(): void {
-    const newDeck: Card[] = [];
-    for (let i = 0; i < this.cards.length; i++) {    
-        const rand = Math.floor(Math.random() * (i + 1));  
-        newDeck[i] = newDeck[rand];
-        newDeck[rand] = this.cards[i];
+    const newDeck: Card[] = []
+    for (let i = 0; i < this.cards.length; i++) {
+      const rand = Math.floor(Math.random() * (i + 1))
+      newDeck[i] = newDeck[rand]
+      newDeck[rand] = this.cards[i]
     }
     this.cards = newDeck
   }

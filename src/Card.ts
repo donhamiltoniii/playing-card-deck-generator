@@ -2,7 +2,7 @@ class Card {
   private suit: string
   private value: string
 
-  private get Suit(): string {
+  public getSuit(): string {
     return this.suit
   }
 

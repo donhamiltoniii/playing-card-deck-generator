@@ -1,5 +1,4 @@
 import Deck from './Deck'
-import Card from './Card'
 
 describe('Deck', () => {
   describe('getCardsValues', () => {
@@ -8,7 +7,7 @@ describe('Deck', () => {
 
       const cards = underTest.getCardValues()
 
-      expect(cards).toContain('2♤')
+      expect(cards).toContainEqual(['2', '♤'])
     })
   })
 
@@ -48,9 +47,9 @@ describe('Deck', () => {
         ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
       )
 
-      const originalCards: string[] = underTest.getCardValues()
+      const originalCards: string[][] = underTest.getCardValues()
       underTest.shuffle()
-      const shuffledCards: string[] = underTest.getCardValues()
+      const shuffledCards: string[][] = underTest.getCardValues()
 
       expect(shuffledCards).not.toStrictEqual(originalCards)
     })

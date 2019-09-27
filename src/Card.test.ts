@@ -7,7 +7,7 @@ describe('Card', () => {
 
       const cardValue = underTest.getValue()
 
-      expect(cardValue).toBe('2🔴')
+      expect(cardValue).toBe('2')
     })
   })
 })
